@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { MultiSelect } from "react-multi-select-component";
+import { Link } from "react-router-dom";
 
 const options = [
     { label: "Grapes 🍇", value: "grapes" },
@@ -27,7 +28,7 @@ const Home = () => {
                             className="multi-select"
                         />
                     </div>
-                    <button className="btn btn-primary mt-4">Recomiendame</button>
+                    <Link to={'books'} className="btn btn-primary mt-4">Recomiendame</Link>
                     </div>
                 </div>
             </div>
