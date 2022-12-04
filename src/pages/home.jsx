@@ -27,6 +27,7 @@ const Home = () => {
                             className="multi-select"
                         />
                     </div>
+                    <button className="btn btn-primary mt-4">Recomiendame</button>
                     </div>
                 </div>
             </div>
