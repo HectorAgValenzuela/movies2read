@@ -693,6 +693,7 @@ button {
     height: auto;
     padding: 40px;
     display: table;
+    border-radius: 20px;
 }
 
 .dummy_text {
@@ -706,8 +707,9 @@ button {
 
 .mail_main {
     width: 100%;
-    display: flex;
-    padding-top: 20px;
+    
+    padding-top: 50px;
+    
 }
 
 .email_text {
