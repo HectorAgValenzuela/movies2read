@@ -29,6 +29,7 @@ const Home = () => {
                                 onChange={setSelected}
                                 labelledBy="Selected"
                                 className="multi-select"
+                                hasSelectAll={false}
                             />
                         </div>
                         <button onClick={redirect} className="btn btn-primary mt-5">Recomiéndame</button>

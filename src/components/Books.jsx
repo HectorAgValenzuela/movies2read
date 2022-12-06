@@ -1,6 +1,5 @@
 const Books = () => {
 
-
     return (
         <div>
             <div class="movies_section layout_padding">
