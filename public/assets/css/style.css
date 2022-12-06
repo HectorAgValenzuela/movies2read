@@ -789,7 +789,14 @@ input.email_text::placeholder {
 .footer_menu {
     width: 100%;
     margin: 0 auto;
-    text-align: center;
+    text-align: center; 
+}
+
+.footer_menu h2 {
+    color: #ffffff;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center; 
 }
 
 .footer_menu ul {
