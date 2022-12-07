@@ -1,30 +1,29 @@
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import TfidfVectorizer
 import pandas as pd
+import numpy as np
+
+from flask import Flask, request, jsonify
+from flask_restful import Resource, Api
+from flask_cors import CORS
+
+import json
+
+app = Flask(__name__)
+api = Api(app)
+CORS(app)
 
 def get_recommendations(N, scores ):
     # load in recipe dataset
     df_recipes = pd.read_csv("Book_P_Path.csv")
-    
+    df_recipes.set_index("item_id")
     # order the scores with and filter to get the highest N scores
 
-    top = sorted(range(len(scores)), key= (lambda i: scores[i]), reverse=True)[:N]
-
+    top = sorted(range(len(scores)), key= (lambda i: scores[i]), reverse=True)
+    #sorted_indexes = np.argsort(scores[0])[::-1]
     # create dataframe to load in recommendations
-    colu = ["url","title","authors","lang","img","year","description"]
-    recommendation = pd.DataFrame(colu)
-    count = 0
-    for i in top:
-        recommendation.at[count, 'title'] = df_recipes['title'][i]      
-        recommendation.at[count, 'url'] = df_recipes['url'][i]
-        recommendation.at[count, 'lang'] = df_recipes['lang'][i]
-        recommendation.at[count, 'authors'] = df_recipes['authors'][i]
-        recommendation.at[count, 'img'] = df_recipes['img'][i]
-        recommendation.at[count, 'year'] = df_recipes['year'][i]
-        recommendation.at[count, 'description'] = df_recipes['description'][i]
-
-        count += 1
-    return recommendation
+    return json.dumps(
+        df_recipes.iloc[top].values[:N].tolist())
 
 def Recomendar(movieID):
     moovieData = pd.read_csv("Movie_P_Path.csv")
@@ -36,5 +35,25 @@ def Recomendar(movieID):
     movies_tfidf = nweTfidf.transform(moovieData[ moovieData["item_id"] == int(movieID)]["Tags"])
     cos_sim = map(lambda x: cosine_similarity(movies_tfidf, x), tfidf_recipe)
     scores = list(cos_sim)
-    return (get_recommendations(5,scores))
+    aux = get_recommendations(5, scores)
+    return aux
     
+class status (Resource):
+    def get(self):
+        try:
+            return {'data': 'Api is Running, please type /recommender?ingredients=ingredient1,ingredient2,ingredient3'}
+        except:
+            return {'data': 'An Error Occurred during fetching Api'}
+
+class Recommender(Resource):
+    def get(self):
+        books = request.args.get('books')
+        print(books)
+        return jsonify({'data': Recomendar(books)})
+            
+
+api.add_resource(status, '/')
+api.add_resource(Recommender, '/recommender')
+
+if __name__ == '__main__':
+    app.run()

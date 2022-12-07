@@ -11,7 +11,7 @@ const Home = () => {
 
 
     const redirect = () => {
-        setBooks(selected.map((book) => book.value).join("-"))
+        setBooks(selected.map((book) => book.value).join(" "))
         navigate(`/${books}`)
     }
 
