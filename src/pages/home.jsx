@@ -30,11 +30,11 @@ const Home = () => {
                                 labelledBy="Selected"
                                 className="multi-select"
                                 hasSelectAll={false}
+                                closeOnChangedValue={true}
                             />
                         </div>
                         <button onClick={redirect} className="btn btn-primary mt-5">Recomiéndame</button>
-                        <Link to={'/books'}>Books</Link>
-                    </div>
+¿                    </div>
                 </div>
             </div>
         </div>
