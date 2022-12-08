@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { MultiSelect } from "react-multi-select-component";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import data from '../items/interfaceMovieId.json'
   
 const Home = () => {
