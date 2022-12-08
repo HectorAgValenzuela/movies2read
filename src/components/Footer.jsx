@@ -11,9 +11,13 @@ const Footer = () => {
                 </div>
                 <div class="social_icon">
                     <ul>
-                        <li><a href="#"><img src="assets/images/fb-icon.png"/></a></li>
+                        <li><a href="#">
+                            <span class="fa-brands fa-linkedin" arian-hidden="true"></span>
+                            <span class="sr-only">LinkedIn</span>
+                        
+                        </a></li>
                         <li><a href="#"><img src="assets/images/twitter-icon.png"/></a></li>
-                        <li><a href="#"><img src="assets/images/linkedin-icon.png"/></a></li>
+                        <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
                         <li><a href="#"><img src="assets/images/instagram-icon.png"/></a></li>
                     </ul>
                 </div>
