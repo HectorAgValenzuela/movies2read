@@ -16,10 +16,9 @@ api = Api(app)
 CORS(app)
 
 
-df_recipes = pd.read_csv("./src/items/recommender/Book_P_Path.csv")
-df_recipes = df_recipes.set_index("item_id")
-moovieData = pd.read_csv("./src/items/recommender/Movie_P_Path.csv")
-bookData = pd.read_csv("./src/items/recommender/Book_P_Path.csv")
+df_recipes = pd.read_csv("Book_P_Path.csv")
+moovieData = pd.read_csv("Movie_P_Path.csv")
+bookData = pd.read_csv("Book_P_Path.csv")
 bookDataParse = bookData["Tags"].values.astype('U')
 
 
