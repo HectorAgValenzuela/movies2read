@@ -6,13 +6,13 @@ const URL = 'http://127.0.0.1:5000/recommender?books='
 
 
 const Books = () => {
-    const {movies} = useParams("")
+    const {movies} = useParams()
     const[books, setBooks] = useState([])
  
     useEffect( () => {
-        console.log(movies)
+        console.log(books)
         getBooks()
-    }, )
+    },[] )
  
     const getBooks = async () => {
        const res = await axios.get(`${URL}${movies}`)

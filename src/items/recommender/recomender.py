@@ -13,9 +13,11 @@ app = Flask(__name__)
 api = Api(app)
 CORS(app)
 
+df_recipes = pd.read_csv("Book_P_Path.csv")
+
+
 def get_recommendations(N, scores ):
     # load in recipe dataset
-    df_recipes = pd.read_csv("Book_P_Path.csv")
     df_recipes.set_index("item_id")
     # order the scores with and filter to get the highest N scores
 
@@ -41,7 +43,7 @@ def Recomendar(movieID):
 class status (Resource):
     def get(self):
         try:
-            return {'data': 'Api is Running, please type /recommender?ingredients=ingredient1,ingredient2,ingredient3'}
+            return {'data': 'Api is Running'}
         except:
             return {'data': 'An Error Occurred during fetching Api'}
 
@@ -56,4 +58,5 @@ api.add_resource(status, '/')
 api.add_resource(Recommender, '/recommender')
 
 if __name__ == '__main__':
+
     app.run()
