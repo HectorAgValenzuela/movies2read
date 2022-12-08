@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from 'axios'
 
-const URL = 'http://127.0.0.1:5000/recommender?books='
+const URL = 'https://movies2read-recommender.herokuapp.com/recommender?books='
 
 
 const Books = () => {
