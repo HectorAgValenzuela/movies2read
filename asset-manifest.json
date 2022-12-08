@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/movies2read/static/css/main.e6c13ad2.css",
-    "main.js": "/movies2read/static/js/main.08a194cd.js",
+    "main.js": "/movies2read/static/js/main.a8b9182c.js",
     "static/js/787.a0479229.chunk.js": "/movies2read/static/js/787.a0479229.chunk.js",
     "index.html": "/movies2read/index.html",
     "main.e6c13ad2.css.map": "/movies2read/static/css/main.e6c13ad2.css.map",
-    "main.08a194cd.js.map": "/movies2read/static/js/main.08a194cd.js.map",
+    "main.a8b9182c.js.map": "/movies2read/static/js/main.a8b9182c.js.map",
     "787.a0479229.chunk.js.map": "/movies2read/static/js/787.a0479229.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.08a194cd.js"
+    "static/js/main.a8b9182c.js"
   ]
 }
